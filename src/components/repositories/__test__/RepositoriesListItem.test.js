@@ -4,7 +4,7 @@ import { MemoryRouter } from "react-router-dom";
 
 import RepositoriesListItem from "../RepositoriesListItem";
 
-// SECOND CHOICE
+// SECOND CHOICE - interaction between the FileIcon module & RepositoriesListItem is untested on doing this
 // note - mocking FileIcon module to avoid rendering the troublesome component in our test
 // Need a relative path to the module so that we can render it with custom mock data
 // It means DO NOT go & import actual FileIcon component at all in our test instead use custom mock module below
@@ -41,7 +41,7 @@ describe("<RepositoriesListItem />", () => {
     return { repository };
   };
 
-  // func to pause test execution while promise gets resolved
+  // helper func to pause test execution while promise gets resolved to see the output
   const pauseWhileAsyncUpdate = () => {
     return new Promise(resolve => {
       setTimeout(() => {
